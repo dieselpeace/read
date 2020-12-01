@@ -1,10 +1,17 @@
-data = []
-with open('reviews.txt', 'r') as s:
-	for line in s:
-		data.append(line)
-print(len(data))
+data = [] 							#declare list
+with open('reviews.txt', 'r') as s: #open reviews.txt
+	for line in s: 					#every entry in .txt
+		data.append(line) 			#put it in the list
+print(len(data)) 					#length of the list
 
-sum_data = 0
+sum_data = 0 						#declare sum_data
+for d in data: 						#take every entry in data
+	sum_data += len(d) 				#add it together
+print(sum_data/len(data)) 
+
+new = []
 for d in data:
-	sum_data += len(d)
-print('average length of reviews: ', sum_data/len(data))
+	if len(d) < 100:
+		new.append(d)
+print('there are', len(new), 'reviews with less than 100 words')
+print(new[1])
