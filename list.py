@@ -1,3 +1,4 @@
+import random
 data = [] 							#declare list
 with open('reviews.txt', 'r') as s: #open reviews.txt
 	for line in s: 					#every entry in .txt
@@ -15,3 +16,6 @@ for d in data:
 		new.append(d)
 print('there are', len(new), 'reviews with less than 100 words')
 print(new[1])
+
+good = [a for a in data if 'good' in a]
+print(good[random.randint(1,1000)])
